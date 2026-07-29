@@ -243,7 +243,7 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
    ============================================================ */
 .solution-block {
   overflow: hidden;
-  background: var(--bg-void); display: flex; flex-wrap: wrap; align-items: center;
+  background: var(--bg-void); display: flex; flex-wrap: wrap; align-items: center; align-content: center;
   gap: 4vw; min-height: 100vh; padding: 10vh 5vw;
 }
 .solution-copy { flex: 1 1 380px; max-width: 460px; }
@@ -309,8 +309,8 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
    ============================================================ */
 .feature-block {
   position: relative; overflow: hidden;
-  min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  padding: 8vh 5vw; background: var(--bg-void); text-align: center;
+  min-height: 60vh; display: flex; align-items: center; justify-content: center;
+  padding: 10vh 5vw; background: var(--bg-void); text-align: center;
 }
 .feature-block::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -478,8 +478,10 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .feature-copy { max-width: 90vw; }
-  .solution-block { flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 1.5rem; min-height: 0; height: auto; padding: 8vh 5vw 4vh; }
-  .phone-stage { flex: 0 1 auto; }
+  .solution-block { display: block !important; min-height: 0 !important; height: auto !important; padding: 3rem 5vw 2rem !important; }
+  .solution-copy { display: block !important; max-width: 100% !important; margin: 0 !important; }
+  .phone-stage { display: block !important; margin: 0.5rem 0 0 0 !important; text-align: center; }
+  .phone-mockup { display: inline-block !important; }
   .plans-row { flex-direction: column; }
   .plan-column { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .vehicle-slide { flex-direction: column; text-align: center; }
