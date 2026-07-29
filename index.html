@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guarda Rodas — Controle absoluto do seu veículo</title>
+<meta name="description" content="Rastreamento em tempo real, bloqueio remoto e monitoramento 24h. Tudo na palma da sua mão.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=switzer@400,500,600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-brand"><img src="assets/img/logo.svg" alt="Guarda Rodas"></div>
+  <div id="loader-bar"><div id="loader-bar-fill"></div></div>
+  <div id="loader-percent">0%</div>
+</div>
+
+<!-- CURSOR GLOW -->
+<div id="cursor-glow"></div>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/5517996554118?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Guarda%20Rodas." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.552 4.088 1.518 5.803L0 24l6.363-1.487A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.996 0-3.85-.583-5.412-1.586l-.388-.242-3.777.883.809-3.68-.253-.397A9.708 9.708 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="nav">
+    <div class="logo"><img src="assets/img/logo.svg" alt="Guarda Rodas"></div>
+    <ul class="nav-links">
+      <li><a href="#funcionalidades">Funcionalidades</a></li>
+      <li><a href="#app">Aplicativo</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta-final">Baixar App</a></li>
+    </ul>
+    <a href="https://wa.me/5517996554118?text=Ol%C3%A1!%20Quero%20proteger%20meu%20ve%C3%ADculo%20com%20a%20Guarda%20Rodas." class="nav-cta" target="_blank" rel="noopener">Proteger meu veículo</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===================================================== -->
+  <!-- 01 HERO -->
+  <!-- ===================================================== -->
+  <section class="hero-standalone" id="hero">
+    <video class="bg-video" autoplay muted loop playsinline poster="">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <span class="section-label">GUARDA RODAS / RASTREAMENTO INTELIGENTE</span>
+      <h1 class="hero-heading">
+        <span class="line"><span class="word">Nunca</span> <span class="word">perca</span></span>
+        <span class="line"><span class="word">seu</span> <span class="word">veículo</span></span>
+        <span class="line"><span class="word accent">de</span> <span class="word accent">vista.</span></span>
+      </h1>
+      <p class="hero-tagline">
+        Controle absoluto. Rastreamento em tempo real.<br>
+        Bloqueio imediato. Tudo na palma da sua mão.
+      </p>
+      <div class="hero-actions">
+        <a href="#planos" class="btn btn-primary">Conhecer Planos</a>
+        <a href="#app" class="btn btn-ghost">Ver Demonstração</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item"><strong>Nº1</strong> do Brasil</span>
+        <span class="hero-trust-divider"></span>
+        <span class="hero-trust-item"><strong>+5.000</strong> clientes monitorados</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 02 O PROBLEMA -->
+  <!-- ===================================================== -->
+  <section class="scroll-block problem-block" id="problema">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/problema.mp4" type="video/mp4">
+    </video>
+    <div class="problem-inner">
+      <span class="section-label">O PROBLEMA</span>
+      <h2 class="reveal-heading">
+        A cada minuto,<br>
+        alguém perde o controle<br>
+        do próprio patrimônio.
+      </h2>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-number" data-value="1" data-decimals="0">0</span>
+          <span class="stat-suffix">veículo roubado a cada 3 min no Brasil</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="72" data-decimals="0">0</span>
+          <span class="stat-suffix">% nunca são recuperados sem rastreamento</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="24" data-decimals="0">0</span>
+          <span class="stat-suffix">horas de monitoramento ativo Guarda Rodas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 03 A SOLUÇÃO -->
+  <!-- ===================================================== -->
+  <section class="scroll-block solution-block" id="solucao">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/solucao.mp4" type="video/mp4">
+    </video>
+    <div class="solution-copy">
+      <span class="section-label">A SOLUÇÃO</span>
+      <h2 class="reveal-heading">O controle sai do veículo<br>e vai para o seu bolso.</h2>
+    </div>
+    <div class="phone-stage">
+      <div class="phone-mockup" data-parallax="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <video autoplay muted loop playsinline>
+            <source src="assets/video/aplicativo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 03B PROTEÇÃO PARA TODOS OS VEÍCULOS -->
+  <!-- ===================================================== -->
+  <section class="vehicle-types" id="veiculos">
+    <div class="vehicle-pin">
+      <span class="section-label center">PARA TODOS OS VEÍCULOS</span>
+      <h2 class="reveal-heading center">Proteção para todos<br>os tipos de veículo.</h2>
+      <div class="vehicle-carousel">
+        <div class="vehicle-slide active">
+          <div class="vehicle-visual" data-image-slot="vehicle-moto">
+            <img src="assets/img/vehicle-moto.png" alt="Motocicletas">
+          </div>
+          <div class="vehicle-copy">
+            <span class="vehicle-index">01</span>
+            <h3>Motocicletas</h3>
+            <p>Para quem utiliza a moto como transporte ou ferramenta de trabalho, é essencial garantir proteção contra imprevistos.</p>
+            <a href="#planos" class="vehicle-link">Saiba mais</a>
+          </div>
+        </div>
+        <div class="vehicle-slide">
+          <div class="vehicle-visual" data-image-slot="vehicle-carro">
+            <img src="assets/img/vehicle-carro.png" alt="Carros">
+          </div>
+          <div class="vehicle-copy">
+            <span class="vehicle-index">02</span>
+            <h3>Carros</h3>
+            <p>Quem preza pela segurança e conforto da família precisa saber onde está o carro a qualquer momento.</p>
+            <a href="#planos" class="vehicle-link">Saiba mais</a>
+          </div>
+        </div>
+        <div class="vehicle-slide">
+          <div class="vehicle-visual" data-image-slot="vehicle-caminhao">
+            <img src="assets/img/vehicle-caminhao.png" alt="Caminhões">
+          </div>
+          <div class="vehicle-copy">
+            <span class="vehicle-index">03</span>
+            <h3>Caminhões</h3>
+            <p>Independente do tamanho da sua frota, nosso rastreamento garante segurança em todo o território nacional.</p>
+            <a href="#planos" class="vehicle-link">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="vehicle-dots">
+        <span class="vehicle-dot active"></span>
+        <span class="vehicle-dot"></span>
+        <span class="vehicle-dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 04 FUNCIONALIDADES (full-screen, uma por vez) -->
+  <!-- ===================================================== -->
+  <section class="feature-block" id="funcionalidades" data-animation="clip-reveal">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/realtime.mp4" type="video/mp4">
+    </video>
+    <div class="feature-copy">
+      <span class="section-label">001 / Localização</span>
+      <h2>Tempo real.<br>Sem atraso.</h2>
+      <p>Veja exatamente onde seu veículo está, a cada segundo, com precisão de satélite.</p>
+    </div>
+  </section>
+
+  <section class="feature-block" id="bloqueio" data-animation="slide-right">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/lock.mp4" type="video/mp4">
+    </video>
+    <div class="feature-copy">
+      <span class="section-label">002 / Bloqueio Remoto</span>
+      <h2>Um toque.<br>Controle total.</h2>
+      <p>Bloqueie o veículo remotamente e interrompa qualquer tentativa em segundos.</p>
+    </div>
+  </section>
+
+  <section class="feature-block" id="alertas" data-animation="scale-up">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/alertas.mp4" type="video/mp4">
+    </video>
+    <div class="feature-copy">
+      <span class="section-label">003 / Alertas Inteligentes</span>
+      <h2>Ele avisa<br>antes de você perguntar.</h2>
+      <p>Movimentação fora de horário, saída de área segura, excesso de velocidade — você é o primeiro a saber.</p>
+    </div>
+  </section>
+
+  <section class="feature-block" id="historico" data-animation="fade-up">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/historico.mp4" type="video/mp4">
+    </video>
+    <div class="feature-copy">
+      <span class="section-label">004 / Histórico</span>
+      <h2>Cada trajeto,<br>registrado.</h2>
+      <p>Consulte rotas, horários e paradas de qualquer dia — tudo dentro do aplicativo.</p>
+    </div>
+  </section>
+
+  <section class="feature-block" id="cobertura" data-animation="rotate-in">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/coverage.mp4" type="video/mp4">
+    </video>
+    <div class="feature-copy">
+      <span class="section-label">005 / Cobertura Nacional</span>
+      <h2>Onde você for,<br>estamos.</h2>
+      <p>Rede própria de monitoramento com cobertura em todo o território nacional.</p>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 05 COMO FUNCIONA (timeline horizontal pinada) -->
+  <!-- ===================================================== -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="how-pin">
+      <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+        <source src="assets/video/como-funciona.mp4" type="video/mp4">
+      </video>
+      <span class="section-label">COMO FUNCIONA</span>
+      <div class="timeline-track">
+        <div class="timeline-step">
+          <span class="step-number">01</span>
+          <h3>Instalamos</h3>
+          <p>Nossa equipe técnica realiza a instalação em sua casa ou empresa.</p>
+        </div>
+        <div class="timeline-step">
+          <span class="step-number">02</span>
+          <h3>Conectamos</h3>
+          <p>O veículo entra na rede Guarda Rodas e no seu aplicativo.</p>
+        </div>
+        <div class="timeline-step">
+          <span class="step-number">03</span>
+          <h3>Você controla tudo</h3>
+          <p>Localização, bloqueio e alertas na palma da mão, 24 horas.</p>
+        </div>
+        <div class="timeline-step">
+          <span class="step-number">04</span>
+          <h3>Proteção 24h</h3>
+          <p>Central de monitoramento acompanhando cada movimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 06 APP (product showcase estilo Apple) -->
+  <!-- ===================================================== -->
+  <section class="app-showcase" id="app">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/aplicativo.mp4" type="video/mp4">
+    </video>
+    <span class="section-label center">O APLICATIVO</span>
+    <h2 class="reveal-heading center">Tudo o que você precisa.<br>Em um único lugar.</h2>
+    <div class="app-grid">
+      <div class="app-tile" data-image-slot="app-ui-map">
+        <img src="assets/img/app-ui-map.png" alt="Mapa em tempo real">
+        <span class="app-tile-label">Mapa</span>
+      </div>
+      <div class="app-tile" data-image-slot="app-ui-lock">
+        <img src="assets/img/app-ui-lock.png" alt="Bloqueio remoto">
+        <span class="app-tile-label">Bloquear</span>
+      </div>
+      <div class="app-tile" data-image-slot="app-ui-alert">
+        <img src="assets/img/app-ui-alert.png" alt="Alerta inteligente">
+        <span class="app-tile-label">Alerta</span>
+      </div>
+      <div class="app-tile" data-image-slot="app-ui-status">
+        <video autoplay muted loop playsinline>
+          <source src="assets/video/estatisticas.mp4" type="video/mp4">
+        </video>
+        <span class="app-tile-label">Status</span>
+      </div>
+      <div class="app-tile" data-image-slot="app-ui-speed">
+        <img src="assets/img/app-ui-speed.png" alt="Velocidade">
+        <span class="app-tile-label">Velocidade</span>
+      </div>
+      <div class="app-tile" data-image-slot="app-ui-history">
+        <img src="assets/img/app-ui-history.png" alt="Histórico de trajetos">
+        <span class="app-tile-label">Histórico</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 07 PLANOS -->
+  <!-- ===================================================== -->
+  <section class="plans-section" id="planos">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/monitoramento.mp4" type="video/mp4">
+    </video>
+    <span class="section-label center">PLANOS</span>
+    <h2 class="reveal-heading center">Escolha o nível<br>de proteção.</h2>
+    <div class="plans-row">
+      <div class="plan-column">
+        <span class="plan-name">Essencial</span>
+        <span class="plan-price">R$ 49<small>/mês</small></span>
+        <ul class="plan-features">
+          <li>Rastreamento em tempo real</li>
+          <li>Aplicativo próprio</li>
+          <li>Alertas básicos</li>
+        </ul>
+        <a href="https://wa.me/5517996554118?text=Ol%C3%A1!%20Quero%20contratar%20o%20plano%20Essencial%20da%20Guarda%20Rodas." class="plan-cta" target="_blank" rel="noopener">Selecionar</a>
+      </div>
+      <div class="plan-column plan-column--premium">
+        <span class="plan-badge">Mais escolhido</span>
+        <span class="plan-name">Premium</span>
+        <span class="plan-price">R$ 89<small>/mês</small></span>
+        <ul class="plan-features">
+          <li>Tudo do plano Essencial</li>
+          <li>Bloqueio remoto imediato</li>
+          <li>Central de monitoramento 24h</li>
+          <li>Histórico completo</li>
+        </ul>
+        <a href="https://wa.me/5517996554118?text=Ol%C3%A1!%20Quero%20contratar%20o%20plano%20Premium%20da%20Guarda%20Rodas." class="plan-cta plan-cta--premium" target="_blank" rel="noopener">Selecionar</a>
+      </div>
+      <div class="plan-column">
+        <span class="plan-name">Frota</span>
+        <span class="plan-price">Sob consulta</span>
+        <ul class="plan-features">
+          <li>Gestão multiveículos</li>
+          <li>Painel corporativo</li>
+          <li>Suporte dedicado</li>
+        </ul>
+        <a href="https://wa.me/5517996554118?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20consultor%20sobre%20o%20plano%20Frota%20da%20Guarda%20Rodas." class="plan-cta" target="_blank" rel="noopener">Falar com consultor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 08 DIFERENCIAIS (marquee) -->
+  <!-- ===================================================== -->
+  <section class="marquee-wrap" id="diferenciais" data-scroll-speed="-20">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/fundo1.mp4" type="video/mp4">
+    </video>
+    <div class="marquee-text">
+      COBERTURA NACIONAL &nbsp;•&nbsp; INSTALAÇÃO DOMICILIAR &nbsp;•&nbsp; MONITORAMENTO 24H &nbsp;•&nbsp;
+      EQUIPE ESPECIALIZADA &nbsp;•&nbsp; APLICATIVO PRÓPRIO &nbsp;•&nbsp; BLOQUEIO REMOTO &nbsp;•&nbsp;
+      ATUALIZAÇÕES EM TEMPO REAL &nbsp;•&nbsp;
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 09 DEPOIMENTOS -->
+  <!-- ===================================================== -->
+  <section class="testimonials" id="depoimentos">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/fundo2.mp4" type="video/mp4">
+    </video>
+    <span class="section-label center">DEPOIMENTOS</span>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>"Recuperei meu carro em menos de uma hora. O bloqueio remoto fez toda a diferença."</p>
+        <div class="testimonial-author">
+          <div class="author-photo" data-image-slot="testimonial-1"></div>
+          <span>Marcos A. — São Paulo</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>"A frota da empresa toda visível em um único painel. Mudou nossa operação."</p>
+        <div class="testimonial-author">
+          <div class="author-photo" data-image-slot="testimonial-2"></div>
+          <span>Renata F. — Curitiba</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>"Instalação rápida, aplicativo simples. Me sinto no controle o tempo todo."</p>
+        <div class="testimonial-author">
+          <div class="author-photo" data-image-slot="testimonial-3"></div>
+          <span>Diego L. — Belo Horizonte</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 10 FAQ -->
+  <!-- ===================================================== -->
+  <section class="faq-section" id="faq">
+    <video class="bg-video bg-video--dim" autoplay muted loop playsinline>
+      <source src="assets/video/fundo3.mp4" type="video/mp4">
+    </video>
+    <span class="section-label center">PERGUNTAS FREQUENTES</span>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          Como funciona a instalação?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer"><p>Nossa equipe técnica vai até você e realiza a instalação em domicílio, sem complicação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          O bloqueio funciona em qualquer lugar do Brasil?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer"><p>Sim. Nossa cobertura é nacional, com central de monitoramento ativa 24 horas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Funciona para motos e caminhões?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer"><p>Sim. Atendemos carros, motos, caminhões e frotas completas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Posso cancelar quando quiser?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer"><p>Sim, sem fidelidade obrigatória — consulte as condições do seu plano.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- 11 CTA FINAL -->
+  <!-- ===================================================== -->
+  <section class="cta-final" id="cta-final">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="assets/video/cta-final.mp4" type="video/mp4">
+    </video>
+    <div class="cta-content">
+      <h2 class="reveal-heading">Proteja hoje.<br><span class="accent">Controle sempre.</span></h2>
+      <a href="https://wa.me/5517996554118?text=Ol%C3%A1!%20Quero%20proteger%20meu%20ve%C3%ADculo%20com%20a%20Guarda%20Rodas." class="btn btn-primary btn-large" target="_blank" rel="noopener">Quero proteger meu veículo</a>
+
+      <div class="store-buttons">
+        <a href="https://apps.apple.com/us/app/rastro-system-3-0/id6474566461?l=pt-BR" class="store-btn" target="_blank" rel="noopener">
+          <svg class="store-icon" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.8q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-92.2zM254.3 79.7c26.9-31.9 24.5-61 23.7-71.7-23.8 1.4-51.3 16.4-67 34.9-17.3 19.8-27.5 44.4-25.4 71.9 26.4 2 50.4-11 68.7-35.1z"/></svg>
+          <span class="store-btn-text"><small>Baixe na</small>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=br.com.rs.rastrosystem3&hl=pt_BR&pli=1" class="store-btn" target="_blank" rel="noopener">
+          <svg class="store-icon" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60-34.1c17.8-11.1 17.8-49.7-1.1-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+          <span class="store-btn-text"><small>Baixe no</small>Google Play</span>
+        </a>
+      </div>
+
+      <div class="payment-methods">
+        <span class="payment-label">Meios de pagamento aceitos</span>
+        <div class="payment-badges">
+          <span class="payment-badge">Visa</span>
+          <span class="payment-badge">Mastercard</span>
+          <span class="payment-badge">Amex</span>
+          <span class="payment-badge">Elo</span>
+          <span class="payment-badge">Hipercard</span>
+          <span class="payment-badge">Diners</span>
+          <span class="payment-badge payment-badge--pix">Pix</span>
+          <span class="payment-badge payment-badge--boleto">Boleto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo"><img src="assets/img/logo.svg" alt="Guarda Rodas"></div>
+  <ul class="footer-links">
+    <li><a href="#funcionalidades">Funcionalidades</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#">Privacidade</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Guarda Rodas. Todos os direitos reservados.</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
