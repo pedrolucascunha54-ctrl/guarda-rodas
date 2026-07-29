@@ -14,8 +14,13 @@ gsap.ticker.lagSmoothing(0);
 
 /* ============================================================
    LOADER
+   (runs as soon as the DOM is parsed — does NOT wait for
+   window "load", which would otherwise block on every single
+   background video finishing its full download, including
+   ones far below the fold. That's what caused the loader to
+   hang for a long time on mobile connections.)
    ============================================================ */
-window.addEventListener("load", () => {
+(function () {
   const bar = document.getElementById("loader-bar-fill");
   const pct = document.getElementById("loader-percent");
   let p = 0;
@@ -31,7 +36,39 @@ window.addEventListener("load", () => {
       }, 300);
     }
   }, 120);
-});
+})();
+
+/* ============================================================
+   LAZY-LOAD BACKGROUND VIDEOS
+   Every video except the hero's ships with preload="none" and
+   its real file on a data-src attribute instead of src, so nothing
+   downloads until the section is actually about to be seen —
+   otherwise all 17 clips would start fetching at once on load,
+   which is what made the site so heavy on mobile.
+   ============================================================ */
+(function lazyLoadVideos() {
+  const videos = Array.from(document.querySelectorAll("video")).filter((v) =>
+    v.querySelector("source[data-src]")
+  );
+  if (!videos.length) return;
+
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const video = entry.target;
+      const source = video.querySelector("source[data-src]");
+      if (source) {
+        source.src = source.dataset.src;
+        source.removeAttribute("data-src");
+        video.load();
+        video.play().catch(() => {});
+      }
+      observer.unobserve(video);
+    });
+  }, { rootMargin: "150% 0px 150% 0px" });
+
+  videos.forEach((video) => io.observe(video));
+})();
 
 /* ============================================================
    HEADER SCROLL STATE
