@@ -478,7 +478,7 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .feature-copy { max-width: 90vw; }
-  .solution-block { flex-direction: column; justify-content: center; gap: 2.5rem; }
+  .solution-block { flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 1.5rem; min-height: 0; height: auto; padding: 8vh 5vw 4vh; }
   .phone-stage { flex: 0 1 auto; }
   .plans-row { flex-direction: column; }
   .plan-column { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
