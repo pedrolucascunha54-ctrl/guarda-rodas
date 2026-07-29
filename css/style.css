@@ -487,8 +487,8 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
   .feature-copy { max-width: 90vw; }
   .reveal-heading { font-size: clamp(1.5rem, 7.5vw, 3rem); }
   .solution-block { display: block !important; min-height: 0 !important; height: auto !important; padding: 3rem 5vw 2rem !important; }
-  .solution-copy { display: block !important; max-width: 100% !important; margin: 0 !important; }
-  .phone-stage { display: block !important; margin: 0.5rem 0 0 0 !important; text-align: center; }
+  .solution-copy { display: block !important; max-width: 100% !important; margin: 0 !important; position: relative !important; z-index: 3 !important; }
+  .phone-stage { display: block !important; margin: 0.5rem 0 0 0 !important; text-align: center; position: relative !important; z-index: 1 !important; }
   .phone-mockup { display: inline-block !important; }
   .plans-row { flex-direction: column; }
   .plan-column { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
