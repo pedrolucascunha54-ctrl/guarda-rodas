@@ -155,7 +155,7 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
 .site-header.scrolled { padding: 0.45rem 4vw; background: rgba(5,5,5,0.75); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); }
 .nav { width: 100%; max-width: 1600px; display: flex; align-items: center; justify-content: space-between; }
 .logo, .footer-logo { display: flex; align-items: center; }
-.logo img { height: 1.8rem; width: auto; }
+.logo img { height: 2.8rem; width: auto; }
 .footer-logo img { height: 5.2rem; width: auto; }
 .nav-links { display: flex; gap: 2.4rem; }
 .nav-links a { font-size: 0.82rem; color: var(--steel); letter-spacing: 0.02em; transition: color 0.3s; }
