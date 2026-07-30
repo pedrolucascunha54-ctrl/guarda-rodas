@@ -35,7 +35,7 @@ gsap.registerPlugin(ScrollTrigger);
   const header = document.querySelector(".site-header");
   if (!bar || !timerEl) return;
 
-  const DURATION = 7 * 60 * 1000;
+  const DURATION = 10 * 60 * 1000;
   let expiry = parseInt(sessionStorage.getItem("promoExpiry"), 10);
   if (!expiry || Date.now() > expiry) {
     expiry = Date.now() + DURATION;
