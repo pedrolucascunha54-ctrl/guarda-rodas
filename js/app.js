@@ -294,42 +294,27 @@ gsap.to(".phone-mockup", {
 });
 
 /* ============================================================
-   VEHICLE TYPES — pinned one-at-a-time carousel
-   (same sticky-CSS + scrub-only pattern as the Como Funciona
-   timeline — a real GSAP pin here would double up with the CSS
-   sticky and create a dead scroll stretch, as it did before)
+   VEHICLE TYPES — arrow/dot-driven carousel
+   (click-based instead of scroll-linked — arrows step through
+   the vehicle types manually instead of requiring a scroll)
    ============================================================ */
 (function vehicleCarousel() {
-  const wrap = document.querySelector(".vehicle-types");
   const slides = document.querySelectorAll(".vehicle-slide");
   const dots = document.querySelectorAll(".vehicle-dot");
-  if (!wrap || !slides.length) return;
+  const prevBtn = document.querySelector(".vehicle-arrow--prev");
+  const nextBtn = document.querySelector(".vehicle-arrow--next");
+  if (!slides.length) return;
 
   let current = 0;
   function setActive(i) {
-    if (i === current && slides[i].classList.contains("active")) return;
-    current = i;
-    slides.forEach((slide, idx) => {
-      slide.classList.toggle("active", idx === i);
-    });
-    dots.forEach((dot, idx) => dot.classList.toggle("active", idx === i));
+    current = (i + slides.length) % slides.length;
+    slides.forEach((slide, idx) => slide.classList.toggle("active", idx === current));
+    dots.forEach((dot, idx) => dot.classList.toggle("active", idx === current));
   }
 
-  ScrollTrigger.create({
-    trigger: wrap,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: true,
-    snap: {
-      snapTo: [0, 0.5, 1],
-      duration: 0.4,
-      ease: "power2.inOut"
-    },
-    onUpdate: (self) => {
-      const idx = Math.min(slides.length - 1, Math.floor(self.progress * slides.length));
-      setActive(idx);
-    }
-  });
+  if (prevBtn) prevBtn.addEventListener("click", () => setActive(current - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => setActive(current + 1));
+  dots.forEach((dot, idx) => dot.addEventListener("click", () => setActive(idx)));
 })();
 
 /* plans stagger-in */
