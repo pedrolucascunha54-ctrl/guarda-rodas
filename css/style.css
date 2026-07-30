@@ -75,9 +75,9 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
 /* ============================================================
    WHATSAPP FLOATING BUTTON
    ============================================================ */
+.whatsapp-wrap { position: fixed; bottom: 2rem; right: 2rem; z-index: 600; display: flex; align-items: center; gap: 0.8rem; }
 .whatsapp-float {
-  position: fixed; bottom: 2rem; right: 2rem; z-index: 600;
-  width: 58px; height: 58px; border-radius: 50%;
+  width: 58px; height: 58px; border-radius: 50%; flex-shrink: 0;
   background: #25d366; color: #fff;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 rgba(37,211,102,0.5);
@@ -91,9 +91,32 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
   70% { box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 14px rgba(37,211,102,0); }
   100% { box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 0 rgba(37,211,102,0); }
 }
+
+.whatsapp-bubble {
+  position: relative;
+  background: var(--white-strong); color: var(--graphite);
+  font-size: 0.85rem; font-weight: 500;
+  padding: 0.7rem 1.1rem; border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  display: flex; align-items: center; gap: 0.6rem; white-space: nowrap;
+  opacity: 0; transform: translateX(10px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+.whatsapp-bubble.visible { opacity: 1; transform: translateX(0) scale(1); pointer-events: auto; }
+.whatsapp-bubble::after {
+  content: ""; position: absolute; top: 50%; right: -6px; transform: translateY(-50%);
+  width: 12px; height: 12px; background: var(--white-strong);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.whatsapp-bubble-close { cursor: pointer; color: var(--steel); font-size: 1.1rem; line-height: 1; padding: 0 0.1rem; }
+.whatsapp-bubble-close:hover { color: var(--graphite); }
+
 @media (max-width: 768px) {
-  .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; }
+  .whatsapp-wrap { bottom: 1.2rem; right: 1.2rem; }
+  .whatsapp-float { width: 52px; height: 52px; }
   .whatsapp-float svg { width: 26px; height: 26px; }
+  .whatsapp-bubble { font-size: 0.78rem; padding: 0.6rem 0.9rem; }
 }
 
 /* ============================================================

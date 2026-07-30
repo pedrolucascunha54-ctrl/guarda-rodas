@@ -1,6 +1,29 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
+   WHATSAPP BUBBLE
+   ============================================================ */
+(function whatsappBubble() {
+  const bubble = document.getElementById("whatsapp-bubble");
+  const closeBtn = bubble ? bubble.querySelector(".whatsapp-bubble-close") : null;
+  if (!bubble) return;
+
+  const dismissed = sessionStorage.getItem("whatsappBubbleDismissed");
+  if (dismissed) return;
+
+  setTimeout(() => bubble.classList.add("visible"), 2500);
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      bubble.classList.remove("visible");
+      sessionStorage.setItem("whatsappBubbleDismissed", "1");
+    });
+  }
+})();
+
+/* ============================================================
    PROMO BAR COUNTDOWN
    Persists the expiry in sessionStorage so a page refresh doesn't
    unfairly reset the clock — a new countdown only starts on a
