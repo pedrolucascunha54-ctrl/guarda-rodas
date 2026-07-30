@@ -477,25 +477,30 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
    07 PLANOS
    ============================================================ */
 .plans-section { background: var(--bg-deep); padding: 14vh 5vw; }
-.plans-row { display: flex; justify-content: center; gap: 0; margin-top: 6vh; border-top: 1px solid rgba(255,255,255,0.08); }
+.plans-row { display: flex; justify-content: center; align-items: stretch; gap: 2rem; flex-wrap: wrap; margin-top: 6vh; }
 .plan-column {
-  flex: 1 1 320px; max-width: 380px; padding: 3.5rem 2.2rem;
-  border-right: 1px solid rgba(255,255,255,0.08);
-  transition: background 0.4s var(--ease-out);
+  flex: 1 1 340px; max-width: 400px; padding: 3rem 2.2rem;
+  border: 1px solid rgba(0,255,163,0.3); border-radius: 20px;
+  background: linear-gradient(165deg, rgba(0,54,34,0.85), rgba(4,16,11,0.92));
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
   position: relative;
 }
-.plan-column:last-child { border-right: none; }
-.plan-column:hover { background: rgba(255,255,255,0.02); }
-.plan-column--premium { background: linear-gradient(180deg, rgba(0,255,163,0.05), transparent); }
+.plan-column:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+.plan-column--premium {
+  border-color: var(--neon);
+  background: linear-gradient(165deg, rgba(0,255,163,0.22), rgba(4,16,11,0.92));
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 50px rgba(0,255,163,0.12);
+}
 .plan-badge { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--neon); text-transform: uppercase; }
-.plan-name { display: block; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; margin: 0.8rem 0; }
+.plan-name { display: block; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; margin: 0.8rem 0; color: var(--white-strong); }
 .plan-price {
-  display: block; font-family: var(--font-display); font-size: 3rem; font-weight: 700;
+  display: block; font-family: var(--font-display); font-size: 2.8rem; font-weight: 700;
   margin-bottom: 2rem; color: var(--lime); text-shadow: 0 0 28px rgba(215, 245, 66, 0.45);
 }
 .plan-price small { font-size: 1rem; color: var(--white-strong); font-weight: 400; text-shadow: none; }
-.plan-features li { font-size: 0.85rem; color: var(--white-strong); padding: 0.6rem 0; border-top: 1px solid rgba(255,255,255,0.06); }
-.plan-cta { display: block; text-align: center; margin-top: 2.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; font-size: 0.82rem; transition: all 0.3s var(--ease-out); }
+.plan-features li { font-size: 0.85rem; color: var(--white-strong); padding: 0.6rem 0; border-top: 1px solid rgba(255,255,255,0.12); }
+.plan-cta { display: block; text-align: center; margin-top: 2.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 100px; font-size: 0.82rem; color: var(--white-strong); transition: all 0.3s var(--ease-out); }
 .plan-cta:hover, .plan-cta--premium { border-color: var(--neon); color: var(--neon); }
 .plan-cta--premium:hover { background: var(--neon); color: var(--bg-void); }
 
@@ -598,7 +603,6 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
   .phone-stage { display: block !important; margin: 0.5rem 0 0 0 !important; text-align: center; position: relative !important; z-index: 1 !important; }
   .phone-mockup { display: inline-block !important; }
   .plans-row { flex-direction: column; }
-  .plan-column { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .vehicle-slide { flex-direction: column; text-align: center; }
   .vehicle-visual { flex: 0 0 55%; width: 100%; height: auto; }
   .vehicle-copy { flex: 1 1 auto; text-align: center; }
