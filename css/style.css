@@ -578,6 +578,16 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
 .payment-badge--pix { background: var(--neon); color: var(--bg-void); }
 .payment-badge--boleto { background: var(--lime); color: var(--bg-void); }
 
+.back-to-top {
+  display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 3rem;
+  padding: 0.8rem 1.6rem; border-radius: 100px; border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white-strong); font-size: 0.82rem; letter-spacing: 0.02em;
+  transition: border-color 0.3s var(--ease-out), color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.back-to-top svg { width: 16px; height: 16px; transition: transform 0.3s var(--ease-out); }
+.back-to-top:hover { border-color: var(--neon); color: var(--neon); transform: translateY(-3px); }
+.back-to-top:hover svg { transform: translateY(-2px); }
+
 /* ============================================================
    FOOTER
    ============================================================ */

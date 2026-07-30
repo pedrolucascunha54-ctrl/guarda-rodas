@@ -72,6 +72,16 @@ gsap.ticker.add((time) => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
 /* ============================================================
+   BACK TO TOP — logo (header) and the CTA final button
+   ============================================================ */
+document.querySelectorAll("#logo-top, #back-to-top").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    lenis.scrollTo(0, { duration: 1.4 });
+  });
+});
+
+/* ============================================================
    LOADER
    (runs as soon as the DOM is parsed — does NOT wait for
    window "load", which would otherwise block on every single
