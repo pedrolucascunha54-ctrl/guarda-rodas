@@ -1,6 +1,42 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
+   PROMO BAR COUNTDOWN
+   Persists the expiry in sessionStorage so a page refresh doesn't
+   unfairly reset the clock — a new countdown only starts on a
+   genuinely new browser session.
+   ============================================================ */
+(function promoCountdown() {
+  const bar = document.getElementById("promo-bar");
+  const timerEl = document.getElementById("promo-timer");
+  const header = document.querySelector(".site-header");
+  if (!bar || !timerEl) return;
+
+  const DURATION = 7 * 60 * 1000;
+  let expiry = parseInt(sessionStorage.getItem("promoExpiry"), 10);
+  if (!expiry || Date.now() > expiry) {
+    expiry = Date.now() + DURATION;
+    sessionStorage.setItem("promoExpiry", expiry);
+  }
+
+  function tick() {
+    const remaining = expiry - Date.now();
+    if (remaining <= 0) {
+      bar.classList.add("hidden");
+      if (header) header.classList.add("no-promo");
+      clearInterval(interval);
+      return;
+    }
+    const m = Math.floor(remaining / 60000);
+    const s = Math.floor((remaining % 60000) / 1000);
+    timerEl.textContent = `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  }
+
+  tick();
+  const interval = setInterval(tick, 1000);
+})();
+
+/* ============================================================
    LENIS SMOOTH SCROLL
    ============================================================ */
 const lenis = new Lenis({
