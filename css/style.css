@@ -228,37 +228,51 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
    01B ATIVIDADE AO VIVO
    ============================================================ */
 .live-activity {
-  background: var(--bg-deep); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 1.1rem 5vw; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  position: relative; overflow: hidden;
+  min-height: 70vh; background: var(--bg-deep);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 10vh 5vw; text-align: center;
 }
-.live-label {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; color: var(--neon); text-transform: uppercase;
-  flex-shrink: 0;
+.live-activity::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.75) 100%);
+}
+.live-activity::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, var(--neon-glow) 0%, transparent 65%);
+  mix-blend-mode: screen;
+}
+.live-activity > *:not(.bg-video) { position: relative; z-index: 2; }
+.live-activity .reveal-heading { margin: 1.4rem 0 3rem; }
+
+.live-card {
+  display: inline-flex; align-items: center; gap: 0.9rem;
+  padding: 1.1rem 1.8rem; border-radius: 100px;
+  background: rgba(16,16,16,0.7); border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px); box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 .live-pulse-dot {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--neon);
+  width: 10px; height: 10px; border-radius: 50%; background: var(--neon); flex-shrink: 0;
   box-shadow: 0 0 0 0 rgba(0,255,163,0.6);
   animation: live-pulse 1.8s ease-out infinite;
 }
 @keyframes live-pulse {
   0% { box-shadow: 0 0 0 0 rgba(0,255,163,0.6); }
-  70% { box-shadow: 0 0 0 8px rgba(0,255,163,0); }
+  70% { box-shadow: 0 0 0 10px rgba(0,255,163,0); }
   100% { box-shadow: 0 0 0 0 rgba(0,255,163,0); }
 }
-.live-ticker { position: relative; height: 1.4rem; width: 100%; max-width: 420px; overflow: hidden; }
+.live-ticker { position: relative; height: 1.6rem; width: 320px; max-width: 60vw; overflow: hidden; }
 .live-message {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-size: 0.82rem; color: var(--white-strong); white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-start;
+  font-size: 0.92rem; font-weight: 500; color: var(--white-strong); white-space: nowrap; overflow: hidden;
   opacity: 0; transform: translateY(100%);
   transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
 }
 .live-message.active { opacity: 1; transform: translateY(0); }
 .live-message.exiting { opacity: 0; transform: translateY(-100%); }
 @media (max-width: 768px) {
-  .live-activity { justify-content: flex-start; padding: 1rem 6vw; }
-  .live-ticker { text-align: left; max-width: none; flex: 1 1 auto; }
-  .live-message { justify-content: flex-start; }
+  .live-ticker { width: auto; max-width: 56vw; }
+  .live-card { padding: 1rem 1.4rem; }
 }
 
 /* ============================================================
