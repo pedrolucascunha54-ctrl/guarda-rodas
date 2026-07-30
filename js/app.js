@@ -71,6 +71,31 @@ gsap.ticker.lagSmoothing(0);
 })();
 
 /* ============================================================
+   LIVE ACTIVITY TICKER — cycles through fake real-time
+   notifications ("+1 veículo recuperado", etc.)
+   ============================================================ */
+(function liveTicker() {
+  const messages = document.querySelectorAll(".live-message");
+  if (!messages.length) return;
+
+  let current = 0;
+  messages[0].classList.add("active");
+
+  setInterval(() => {
+    const next = (current + 1) % messages.length;
+    messages[current].classList.remove("active");
+    messages[current].classList.add("exiting");
+    messages[next].classList.add("active");
+
+    setTimeout(() => {
+      messages[current].classList.remove("exiting");
+    }, 500);
+
+    current = next;
+  }, 3200);
+})();
+
+/* ============================================================
    HEADER SCROLL STATE
    ============================================================ */
 ScrollTrigger.create({
