@@ -148,11 +148,11 @@ button { font-family: inherit; border: none; background: none; color: inherit; c
 #promo-bar {
   position: fixed; top: 0; left: 0; width: 100%; z-index: 800;
   height: 42px; display: flex; align-items: center; justify-content: center;
-  background: var(--neon); color: var(--bg-void);
+  background: var(--neon); color: var(--white-strong);
   transition: transform 0.4s var(--ease-out), opacity 0.4s var(--ease-out);
 }
 #promo-bar.hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
-.promo-text { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em; text-align: center; padding: 0 3vw; text-transform: uppercase; }
+.promo-text { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em; text-align: center; padding: 0 3vw; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.35); }
 .promo-text strong { font-weight: 700; }
 .promo-clock {
   display: inline-flex; align-items: center; gap: 0.3rem;
