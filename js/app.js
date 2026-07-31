@@ -1,6 +1,36 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
+   SOCIAL PROOF POPUP — appears repeatedly in the corner,
+   independent of scroll position, with a random message
+   ============================================================ */
+(function socialToast() {
+  const toast = document.getElementById("social-toast");
+  const textEl = document.getElementById("social-toast-text");
+  if (!toast || !textEl) return;
+
+  const messages = [
+    "+1 veículo protegido — Campinas, SP",
+    "+1 veículo recuperado — Salvador, BA",
+    "+1 veículo monitorado agora — São Paulo, SP",
+    "+1 veículo protegido — Belo Horizonte, MG",
+    "+1 veículo recuperado — Curitiba, PR",
+    "+1 veículo protegido — Recife, PE"
+  ];
+  let index = 0;
+
+  function showToast() {
+    textEl.textContent = messages[index % messages.length];
+    index++;
+    toast.classList.add("visible");
+    setTimeout(() => toast.classList.remove("visible"), 4500);
+  }
+
+  setTimeout(showToast, 4000);
+  setInterval(showToast, 12000);
+})();
+
+/* ============================================================
    WHATSAPP BUBBLE
    ============================================================ */
 (function whatsappBubble() {
