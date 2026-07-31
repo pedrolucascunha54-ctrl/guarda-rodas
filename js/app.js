@@ -1,13 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
-   SOCIAL PROOF POPUP — appears repeatedly in the corner,
-   independent of scroll position, with a random message
+   SOCIAL PROOF POPUP — only starts cycling once the Hero has
+   been scrolled past, and stops/hides if the user scrolls back up to it
    ============================================================ */
 (function socialToast() {
   const toast = document.getElementById("social-toast");
   const textEl = document.getElementById("social-toast-text");
-  if (!toast || !textEl) return;
+  const hero = document.getElementById("hero");
+  if (!toast || !textEl || !hero) return;
 
   const messages = [
     "+1 veículo protegido — Campinas, SP",
@@ -18,6 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
     "+1 veículo protegido — Recife, PE"
   ];
   let index = 0;
+  let timeoutId = null;
+  let intervalId = null;
 
   function showToast() {
     textEl.textContent = messages[index % messages.length];
@@ -26,8 +29,25 @@ gsap.registerPlugin(ScrollTrigger);
     setTimeout(() => toast.classList.remove("visible"), 4000);
   }
 
-  setTimeout(showToast, 2000);
-  setInterval(showToast, 6000);
+  function start() {
+    if (intervalId) return;
+    timeoutId = setTimeout(showToast, 1500);
+    intervalId = setInterval(showToast, 6000);
+  }
+
+  function stop() {
+    clearTimeout(timeoutId);
+    clearInterval(intervalId);
+    intervalId = null;
+    toast.classList.remove("visible");
+  }
+
+  ScrollTrigger.create({
+    trigger: hero,
+    start: "bottom top",
+    onEnter: start,
+    onLeaveBack: stop
+  });
 })();
 
 /* ============================================================
