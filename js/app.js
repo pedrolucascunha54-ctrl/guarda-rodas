@@ -1,14 +1,15 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
-   SOCIAL PROOF POPUP — only starts cycling once the Hero has
-   been scrolled past, and stops/hides if the user scrolls back up to it
+   SOCIAL PROOF POPUP — starts cycling as soon as the "Ao Vivo"
+   section (right after the Hero) comes into view, and stops/hides
+   if the user scrolls back up past it
    ============================================================ */
 (function socialToast() {
   const toast = document.getElementById("social-toast");
   const textEl = document.getElementById("social-toast-text");
-  const hero = document.getElementById("hero");
-  if (!toast || !textEl || !hero) return;
+  const atividade = document.getElementById("atividade");
+  if (!toast || !textEl || !atividade) return;
 
   const messages = [
     "+1 veículo protegido — Campinas, SP",
@@ -43,8 +44,8 @@ gsap.registerPlugin(ScrollTrigger);
   }
 
   ScrollTrigger.create({
-    trigger: hero,
-    start: "bottom top",
+    trigger: atividade,
+    start: "top 80%",
     onEnter: start,
     onLeaveBack: stop
   });
