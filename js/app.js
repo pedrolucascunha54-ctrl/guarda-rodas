@@ -23,11 +23,11 @@ gsap.registerPlugin(ScrollTrigger);
     textEl.textContent = messages[index % messages.length];
     index++;
     toast.classList.add("visible");
-    setTimeout(() => toast.classList.remove("visible"), 4500);
+    setTimeout(() => toast.classList.remove("visible"), 4000);
   }
 
-  setTimeout(showToast, 4000);
-  setInterval(showToast, 12000);
+  setTimeout(showToast, 2000);
+  setInterval(showToast, 6000);
 })();
 
 /* ============================================================
